@@ -28,7 +28,7 @@ def post_missing_people():
     """
     return person.create_report(
         db      = pymongo,
-        data    = request
+        data    = request.data
     )
 
 
@@ -40,7 +40,7 @@ def get_missing_people():
     """
     return person_controller.get_people(
         db      = pymongo,
-        data    = request
+        data    = request.data
     )
 
 
@@ -52,7 +52,7 @@ def update_report():
     """
     return person_controller.update_report(
         db      = pymongo,
-        data    = request
+        data    = request.data
     )
 
 
