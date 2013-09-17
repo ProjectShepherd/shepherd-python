@@ -3,13 +3,25 @@
 import util
 
 # config
-from os import path
+from sys import path
 path.append('../')
 from config import errors as ERR
 from config import mongo_config
 
-@util.check_args()
-@util.parse_json
-def get_people(db=None, data=None):
+
+@util.check_args(db=ERR.DB_MISSING, data=DATA_MISSING)
+def get_people(db, data):
+    pass
+
+
+@util.check_args(db=ERR.DB_MISSING, data=DATA_MISSING)
+@util.parse_json(data)
+def create_report(db, data):
+    pass
+
+
+@util.check_args(db=ERR.DB_MISSING, data=DATA_MISSING)
+@util.parse_json(data)
+def update_report(db, data):
     pass
 
