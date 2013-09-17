@@ -1,6 +1,7 @@
 
 # libraries
 import simplejson
+from functools import wraps
 
 # config
 from sys import path
@@ -15,7 +16,7 @@ path.append('controllers/')
 
 # looks for a specified arguments then decodes them from JSON
 def parse_json(*parse_args):
-    def wrapped_fn(f)
+    def wrapped_fn(f):
         @wraps(f)
         def decorated_function(**kwargs):
             for arg in parse_args:
@@ -32,7 +33,7 @@ def parse_json(*parse_args):
 
 # checks that all "wrapper_args" are passed into the function
 # if a arg (key) is missing, it's value (error) is returned
-def check_args(**wrapper_args)
+def check_args(**wrapper_args):
     def needs(f):
         @wraps(f)
         def decorated_function(**kwargs):

@@ -16,7 +16,7 @@ def generate_error(message=None, code=400):
 def DB_MISSING():
     return generate_error(
         message = 'Your DB is acting up...',
-        code : 500
+        code = 500
     )
 
 
